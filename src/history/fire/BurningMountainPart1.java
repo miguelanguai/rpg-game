@@ -37,11 +37,12 @@ public class BurningMountainPart1 {
      * Permite al jugador tomar una decisión sobre cómo proceder en la Montaña Ardiente.
      */
     private void makeChoice() {
-        int choice = scanner.nextInt();  // Reutilizamos el scanner que ya fue pasado en el constructor
+        int choice = scanner.nextInt();
         switch (choice) {
             case 1:
                 System.out.println("Avanzas con decisión hacia la cima. El calor se intensifica, y tus pasos se vuelven más pesados.");
-                // Aquí podrías agregar la lógica para los desafíos que enfrenta el jugador en esta ruta.
+                BurningMountainCombat1 burningMountainCombat1 = new BurningMountainCombat1(scanner, player);
+                burningMountainCombat1.startPathAndCombat();
                 break;
             case 2:
                 System.out.println("Decides buscar un atajo. Te deslizas por un pasaje lateral, donde el calor es menos intenso, pero el camino es traicionero.");
