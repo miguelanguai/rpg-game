@@ -232,7 +232,7 @@ public class Player extends Character {
         List<Attack> attackList;
         switch (selection){
             case 1:
-                player=new Player(CharacterType.WIZARD, weapon1, armor1, 0, inventory, skill1);
+                player=new Player(CharacterType.WIZARD, weapon5, armor3, 0, inventory, skill1);
                 player.setTotalHealth(20);
                 player.setAttack(1);
                 player.setMagic(4);
@@ -245,7 +245,7 @@ public class Player extends Character {
                 player.setStatus(Status.NORMAL);
                 break;
             case 2:
-                player=new Player(CharacterType.ARCHER, weapon1, armor1, 0, inventory, skill1);
+                player=new Player(CharacterType.ARCHER, weapon3, armor2, 0, inventory, skill1);
                 player.setTotalHealth(20);
                 player.setAttack(2);
                 player.setMagic(2);
@@ -285,7 +285,6 @@ public class Player extends Character {
         }
 
         player.setName(name);
-
 
         return player;
     }

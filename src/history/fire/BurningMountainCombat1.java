@@ -1,6 +1,10 @@
 package history.fire;
 
+import battle.Battle;
 import character.Player;
+import character.Enemy;  // Asegúrate de importar la clase Enemy
+import object.ObjectAttribute;
+import object.ObjectEntity;  // Asegúrate de que esta clase está disponible
 
 import java.util.Scanner;
 
@@ -30,9 +34,25 @@ public class BurningMountainCombat1 {
 
     /**
      * Método que llama a la lógica de combate.
-     * Este método será completado con la lógica que está implementando tu compañero.
      */
     private void startCombat() {
-        System.out.println("El combate comienza...");
+
+        ObjectEntity object = new ObjectEntity("Salamandras","Correnmucho", ObjectAttribute.ATTACK); // Asegúrate de inicializar correctamente este objeto
+
+
+        Enemy enemy = new Enemy(object);
+        System.out.println(player);
+        System.out.println(player.getTotalHealth());
+        Battle battle = new Battle(player, enemy, false); // Asegúrate de que Battle acepta Enemy
+        battle.battle();
+
+        // Aquí puedes continuar la historia dependiendo del resultado de la batalla
+        if (battle.isPlayerWon()) {
+            System.out.println("¡Has derrotado al enemigo y continúas tu camino!");
+            // Continuar la historia
+        } else {
+            System.out.println("Has sido derrotado. Debes regresar y prepararte mejor.");
+            // Lógica adicional para el caso de derrota
+        }
     }
 }
