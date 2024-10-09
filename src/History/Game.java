@@ -1,7 +1,9 @@
+package History;
+
 import java.util.Scanner;
 
 /**
- * La clase Game representa la lógica principal del juego donde el jugador interactúa
+ * La clase History.Game representa la lógica principal del juego donde el jugador interactúa
  * con un anciano y toma decisiones que afectarán el desarrollo del juego.
  */
 public class Game {
@@ -11,7 +13,7 @@ public class Game {
     private Scanner scanner;
 
     /**
-     * Inicializa el juego y crea instancias de Player, Introduction y ElderConversation.
+     * Inicializa el juego y crea instancias de Player, History.Introduction y History.ElderConversation.
      */
     public Game() {
         player = new MockPlayer();

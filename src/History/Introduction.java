@@ -1,5 +1,7 @@
+package History;
+
 /**
- * La clase Introduction maneja la introducción del juego.
+ * La clase History.Introduction maneja la introducción del juego.
  */
 public class Introduction {
     /**

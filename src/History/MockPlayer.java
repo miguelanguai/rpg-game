@@ -1,12 +1,14 @@
+package History;
+
 /**
- * La clase MockPlayer simula el comportamiento de un jugador en el juego.
+ * La clase History.MockPlayer simula el comportamiento de un jugador en el juego.
  * Se utiliza para propósitos de prueba.
  */
 public class MockPlayer {
     private String name;
 
     /**
-     * Inicializa un MockPlayer con un nombre predeterminado.
+     * Inicializa un History.MockPlayer con un nombre predeterminado.
      */
     public MockPlayer() {
         this.name = "Jugador Simulado";

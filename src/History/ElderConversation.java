@@ -1,15 +1,19 @@
+package History;
+
 import java.util.Scanner;
 
 /**
- * La clase ElderConversation maneja el diálogo entre el jugador y el anciano.
+ * La clase History.ElderConversation maneja el diálogo entre el jugador y el anciano.
  */
 public class ElderConversation {
     private Scanner scanner;
-    private  MockPlayer player;
+    private MockPlayer player;
+    private IntroductionPart2 introductionPart2;
 
     public ElderConversation(Scanner scanner, MockPlayer player) {
         this.scanner = scanner; // Reutiliza el Scanner existente
         this.player = player;
+        this.introductionPart2 = new IntroductionPart2(scanner, player);
     }
 
     /**
@@ -50,7 +54,7 @@ public class ElderConversation {
                 displayOptions();
         }
 
-        finalDecision();
+        introductionPart2.introductionPart2();
     }
 
     /**
@@ -78,6 +82,7 @@ public class ElderConversation {
     private void respondToWhatDoesItMatter() {
         System.out.println("Anciano: Tú, " + player.getName() +" has sido elegido. Las leyendas hablaban de la llegada de un héroe cuando las sombras cayeran sobre la isla.");
         System.out.println("Anciano: Alguien con la fuerza, la destreza y el coraje para desafiar a los elementos, y restaurar lo que se ha perdido.");
+        System.out.println("Anciano: Tu destino está entrelazado con el de esta isla. Si no actúas, Java caerá en la oscuridad para siempre");
     }
 
     /**
