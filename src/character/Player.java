@@ -286,7 +286,7 @@ public class Player extends Character {
 
         player.setName(name);
 
-        System.out.println(player);
+
         return player;
     }
 
