@@ -1,4 +1,4 @@
-package History;
+package history;
 
 /**
  * La clase GameOver maneja el final del juego.

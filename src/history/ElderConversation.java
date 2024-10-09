@@ -1,4 +1,6 @@
-package History;
+package history;
+
+import history.introduction.IntroductionPart2;
 
 import java.util.Scanner;
 

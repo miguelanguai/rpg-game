@@ -1,4 +1,4 @@
-package History;
+package history;
 
 /**
  * La clase History.MockPlayer simula el comportamiento de un jugador en el juego.

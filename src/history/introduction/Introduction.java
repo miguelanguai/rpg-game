@@ -1,4 +1,4 @@
-package History;
+package history.introduction;
 
 /**
  * La clase History.Introduction maneja la introducción del juego.

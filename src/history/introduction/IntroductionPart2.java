@@ -1,4 +1,7 @@
-package History;
+package history.introduction;
+
+import history.GameOver;
+import history.MockPlayer;
 
 import java.util.Scanner;
 
@@ -9,7 +12,7 @@ import java.util.Scanner;
 public class IntroductionPart2 {
     private Scanner scanner;
     private MockPlayer player;
-    private  GameOver gameOver;
+    private GameOver gameOver;
 
     public IntroductionPart2(Scanner scanner, MockPlayer player) {
         this.scanner = scanner;

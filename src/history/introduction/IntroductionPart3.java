@@ -1,4 +1,7 @@
-package History;
+package history.introduction;
+
+import history.MockPlayer;
+import history.fire.BurningMountainPart1;
 
 import java.util.Scanner;
 
@@ -44,7 +47,8 @@ public class IntroductionPart3 {
                 System.out.println("Anciano: La Montaña Ardiente no es lugar para los débiles.");
                 System.out.println("Anciano: Antaño un hogar de poderosos espíritus del fuego, ahora está corrompida por fuerzas oscuras.");
                 System.out.println("Anciano: Prepárate para enfrentar enemigos que controlan el fuego, y tal vez algo peor.");
-                // TO-DO:  lógica para la ruta del fuego.
+                BurningMountainPart1 burningMountainPart1 = new BurningMountainPart1(scanner, player);
+                burningMountainPart1.startBurningMountain();
                 break;
             case 2:
                 System.out.println("Has elegido el Bosque Antiguo. Prepárate para enfrentar los desafíos de la tierra.");
