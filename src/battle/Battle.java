@@ -226,7 +226,7 @@ public class Battle {
     }
 
     /**
-     * usuario emplea un objeto. TODO
+     * usuario emplea un objeto.
      */
     private void useObject(ObjectEntity object) {
         object.use(this.player);
