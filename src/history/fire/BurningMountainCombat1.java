@@ -1,11 +1,15 @@
 package history.fire;
 
 import battle.Battle;
+import character.CharacterType;
 import character.Player;
-import character.Enemy;  // Asegúrate de importar la clase Enemy
+import character.Enemy;
+import character.attributes.Attack;
 import object.ObjectAttribute;
-import object.ObjectEntity;  // Asegúrate de que esta clase está disponible
+import object.ObjectEntity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -37,22 +41,27 @@ public class BurningMountainCombat1 {
      */
     private void startCombat() {
 
-        ObjectEntity object = new ObjectEntity("Salamandras","Correnmucho", ObjectAttribute.ATTACK); // Asegúrate de inicializar correctamente este objeto
+       boolean isBoss = false;
+       ObjectEntity enemyObject = new ObjectEntity("Cristal de confusión", "Un pequeño cristal que emite un brillo tenue. Al activarse, genera ilusiones en el entorno, confundiendo a los jugadores y haciéndolos dudar de sus decisiones.", ObjectAttribute.STATUS);
+       int playerLevel = player.getLevel();
+       String enemyName = "Salamandra de fuego";
+
+       Enemy enemy = Enemy.generateEnemy(isBoss, enemyObject, playerLevel, enemyName);
 
 
-        Enemy enemy = new Enemy(object);
+
         System.out.println(player);
         System.out.println(player.getTotalHealth());
-        Battle battle = new Battle(player, enemy, false); // Asegúrate de que Battle acepta Enemy
+        Battle battle = new Battle(player, enemy, false);
         battle.battle();
 
-        // Aquí puedes continuar la historia dependiendo del resultado de la batalla
+
         if (battle.isPlayerWon()) {
             System.out.println("¡Has derrotado al enemigo y continúas tu camino!");
-            // Continuar la historia
+
         } else {
             System.out.println("Has sido derrotado. Debes regresar y prepararte mejor.");
-            // Lógica adicional para el caso de derrota
+
         }
     }
 }
