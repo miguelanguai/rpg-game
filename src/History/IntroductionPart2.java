@@ -63,6 +63,10 @@ public class IntroductionPart2 {
      */
     private void acceptMission() {
         System.out.println("Anciano: '¡Excelente! Juntos restauraremos el equilibrio de la isla.'");
+
+        // Iniciar la continuación de la historia en IntroductionPart3
+        IntroductionPart3 introductionPart3 = new IntroductionPart3(scanner, player);
+        introductionPart3.introductionPart3();
     }
 
     /**
