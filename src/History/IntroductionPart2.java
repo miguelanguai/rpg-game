@@ -9,10 +9,12 @@ import java.util.Scanner;
 public class IntroductionPart2 {
     private Scanner scanner;
     private MockPlayer player;
+    private  GameOver gameOver;
 
     public IntroductionPart2(Scanner scanner, MockPlayer player) {
         this.scanner = scanner;
         this.player = player;
+        this.gameOver = new GameOver();
     }
 
     // Método que inicia la continuación de la historia
@@ -27,5 +29,46 @@ public class IntroductionPart2 {
         System.out.println("Anciano: Ahora, la decisión es tuya, joven" + player.getName());
         System.out.println("Anciano: Puedes elegir seguir adelante y enfrentar el destino que te espera, o puedes volver por donde viniste, dejando que las sombras consuman este mundo.");
         System.out.println("Anciano: Sea cual sea tu elección, debes tomarla ahora.");
+        finalDecision();
+    }
+
+    /**
+     * Permite al jugador tomar una decisión final sobre aceptar o rechazar la misión del anciano.
+     */
+    private void finalDecision() {
+        System.out.println("Anciano: Ahora, la decisión es tuya," + player.getName());
+        System.out.println("Anciano: Puedes elegir seguir adelante y enfrentar el destino que te espera, o puedes volver por donde viniste, dejando que las sombras consuman este mundo");
+        System.out.println("Anciano: Sea cual sea tu elección, debes tomarla ahora.");
+        System.out.println("1. Acepto la misión. Ayudaré a restaurar el equilibrio.");
+        System.out.println("2. No. Esta no es mi lucha.");
+
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                acceptMission();
+                break;
+            case 2:
+                System.out.println("Anciano: Lo entiendo... no todos están destinados a la grandeza. Sin embargo, recuerda mis palabras: sin tu ayuda, la isla caerá en la oscuridad eterna.");
+                rejectMission();
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                finalDecision(); // Vuelve a llamar a la decisión final si la opción es inválida
+        }
+    }
+
+    /**
+     * Maneja la aceptación de la misión.
+     */
+    private void acceptMission() {
+        System.out.println("Anciano: '¡Excelente! Juntos restauraremos el equilibrio de la isla.'");
+    }
+
+    /**
+     * Maneja el rechazo de la misión.
+     */
+    private void rejectMission() {
+        gameOver.endGame(player.getName(), "rechazado poner tu vida en juego");
     }
 }

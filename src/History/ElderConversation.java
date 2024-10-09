@@ -85,40 +85,5 @@ public class ElderConversation {
         System.out.println("Anciano: Tu destino está entrelazado con el de esta isla. Si no actúas, Java caerá en la oscuridad para siempre");
     }
 
-    /**
-     * Permite al jugador tomar una decisión final sobre aceptar o rechazar la misión del anciano.
-     */
-    private void finalDecision() {
-        System.out.println("Ahora, la decisión es tuya:");
-        System.out.println("1. Acepto la misión. Ayudaré a restaurar el equilibrio.");
-        System.out.println("2. No. Esta no es mi lucha.");
 
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                acceptMission();
-                break;
-            case 2:
-                rejectMission();
-                break;
-            default:
-                System.out.println("Opción no válida.");
-                finalDecision(); // Vuelve a llamar a la decisión final si la opción es inválida
-        }
-    }
-
-    /**
-     * Maneja la aceptación de la misión.
-     */
-    private void acceptMission() {
-        System.out.println("Anciano: '¡Excelente! Juntos restauraremos el equilibrio de la isla.'");
-    }
-
-    /**
-     * Maneja el rechazo de la misión.
-     */
-    private void rejectMission() {
-        System.out.println("Anciano: 'Entiendo, pero recuerda que el destino de la isla está en tus manos.'");
-    }
 }
