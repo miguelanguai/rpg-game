@@ -4,11 +4,23 @@ import java.util.Scanner;
  * La clase ElderConversation maneja el diálogo entre el jugador y el anciano.
  */
 public class ElderConversation {
+    private Scanner scanner;
+    private  MockPlayer player;
+
+    public ElderConversation(Scanner scanner, MockPlayer player) {
+        this.scanner = scanner; // Reutiliza el Scanner existente
+        this.player = player;
+    }
+
     /**
      * Inicia el diálogo con el anciano.
      */
     public void start() {
         System.out.println("Anciano: 'Así que has llegado, joven aventurero... aunque, no sé si este es el momento adecuado para celebrar tu llegada.'");
+        System.out.println("Anciano: Este lugar que ves, esta isla... es mucho más de lo que parece.");
+        System.out.println("Anciano: La Isla de Java ha sido el corazón de los elementos durante siglos.");
+        System.out.println("Anciano: Aquí, tierra, fuego, agua y aire se entrelazan, mantenidos en equilibrio por los antiguos guardianes.");
+        System.out.println("Anciano: Pero algo ha cambiado... algo terrible ha sucedido.");
         displayOptions();
     }
 
@@ -35,7 +47,7 @@ public class ElderConversation {
                 break;
             default:
                 System.out.println("Opción no válida.");
-                displayOptions(); // Vuelve a llamar a las opciones si la opción es inválida
+                displayOptions();
         }
 
         finalDecision();
@@ -45,21 +57,27 @@ public class ElderConversation {
      * Responde a la pregunta "¿Quién eres tú?".
      */
     private void respondToWhoAreYou() {
-        System.out.println("Anciano: 'Soy el guardián de esta isla, y he estado esperando tu llegada.'");
+        System.out.println("Anciano: Mi nombre... ya no importa. Una vez fui conocido como el Erudito de Jakarta, un guardián de conocimientos y secretos ancestrales.");
+        System.out.println("Anciano: Pero esos días quedaron atrás. Ahora soy solo un viejo que ha visto demasiado, y teme lo que está por venir.”");
     }
 
     /**
      * Responde a la pregunta "¿Qué es lo que ha sucedido?".
      */
     private void respondToWhatHappened() {
-        System.out.println("Anciano: 'La isla está en peligro, y solo tú puedes ayudar a restaurar el equilibrio.'");
+        System.out.println("Anciano: El Rey Ardán, el líder de los Guardianes Elementales, ha desaparecido.");
+        System.out.println("Anciano: Con él, el equilibrio que ha mantenido la isla en paz por generaciones comienza a desmoronarse.");
+        System.out.println("Anciano: Los elementos, antes en armonía, están en caos.");
+        System.out.println("Anciano: La tierra tiembla, el fuego arde sin control, el agua inunda sin piedad y los vientos rugen con furia.");
+        System.out.println("Sin Ardán, la isla está condenada.");
     }
 
     /**
      * Responde a la pregunta "¿Qué tiene que ver todo esto conmigo?".
      */
     private void respondToWhatDoesItMatter() {
-        System.out.println("Anciano: 'Porque está en tus manos cambiar el destino de todos los que aquí habitan.'");
+        System.out.println("Anciano: Tú, " + player.getName() +" has sido elegido. Las leyendas hablaban de la llegada de un héroe cuando las sombras cayeran sobre la isla.");
+        System.out.println("Anciano: Alguien con la fuerza, la destreza y el coraje para desafiar a los elementos, y restaurar lo que se ha perdido.");
     }
 
     /**

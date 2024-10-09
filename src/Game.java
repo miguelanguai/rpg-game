@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * La clase Game representa la lógica principal del juego donde el jugador interactúa
  * con un anciano y toma decisiones que afectarán el desarrollo del juego.
@@ -6,6 +8,7 @@ public class Game {
     private MockPlayer player;
     private Introduction introduction;
     private ElderConversation elderConversation;
+    private Scanner scanner;
 
     /**
      * Inicializa el juego y crea instancias de Player, Introduction y ElderConversation.
@@ -13,7 +16,8 @@ public class Game {
     public Game() {
         player = new MockPlayer();
         introduction = new Introduction();
-        elderConversation = new ElderConversation();
+        scanner = new Scanner(System.in);
+        elderConversation = new ElderConversation(scanner, player);
     }
 
     /**
