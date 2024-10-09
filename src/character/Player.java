@@ -10,6 +10,7 @@ import object.ObjectAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Player extends Character {
 
@@ -171,9 +172,122 @@ public class Player extends Character {
 
     }
 
+    /**
+     * crea el Jugador Virtual que elige el jugador y lo devuelve
+     * @return Player con el que jugar
+     */
+    public static Player generatePlayer(){
+        //ifs para ver cual elige.
+        int selection;
+        String name;
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("¿Cómo llamarás a tu personaje?");
+        name=s.nextLine();
+
+        do{
+            System.out.println("Elige entre los siguientes personajes jugables:");
+            System.out.println("1) Mago");
+            System.out.println("2) Arquero");
+            System.out.println("3) Guerrero");
+
+
+            selection = s.nextInt();
+            s.nextLine();
+            System.out.println(selection);
+
+            if (selection==1||selection==2||selection==3){
+                break;
+            }
+            System.out.println("Elección incorrecta. Elige de nuevo");
+        }while(true);
+
+        Weapon weapon1 = new Weapon("Espada", "Una espada sencilla, bien equilibrada, perfecta para el combate cuerpo a cuerpo");
+        Weapon weapon2 = new Weapon("Hacha", "Hacha de doble filo que duplica la cantidad de víctimas en combate cuerpo a cuerpo");
+        Weapon weapon3 = new Weapon("Arco Básico", "Un arco sencillo, hecho para ataques a distancia con precisión");
+        Weapon weapon4 = new Weapon("Arco Incandescente", "Arco que tira flechas de lava, con las que quemar al enemigo");
+        Weapon weapon5 = new Weapon("Bastón de Roble", "Un bastón básico utilizado para canalizar magia elemental");
+        Weapon weapon6 = new Weapon("Libro del Fénix", "Libro con encantamientos poderosos");
+
+        Armor armor1 = new Armor("Armadura de placas", "Armadura que ofrece resistencia a ataques físicos");
+        Armor armor2 = new Armor("Cota de malla", "Armadura metálica que permite movilidad y precisión");
+        Armor armor3 = new Armor("Túnica", "Prenda hecha por elfos ligera pero muy resistente");
+
+        List<ObjectEntity> inventory = new ArrayList<>();
+
+        Skill skill1 = new Skill("Normal", "Habilidad que no hace nada mas");
+
+        Attack attack1 = new Attack("Toque afilado", 1, 100, 5, CharacterType.WARRIOR);
+        Attack attack2 = new Attack("Mandoble violento", 2, 100, 5, CharacterType.WARRIOR);
+        Attack attack3 = new Attack("Flecha afilada", 1, 100, 5, CharacterType.ARCHER);
+        Attack attack4 = new Attack("Flechazo eficaz", 2, 100, 5, CharacterType.ARCHER);
+        Attack attack5 = new Attack("Lanzapiedras", 1, 100, 5, CharacterType.WIZARD);
+        Attack attack6 = new Attack("Confundus", 2, 100, 5, CharacterType.WIZARD);
+        Attack attack7 = new Attack("Arañazo", 1, 100, 5, CharacterType.REGULAR);
+        Attack attack8 = new Attack("Placaje", 2, 100, 5, CharacterType.REGULAR);
 
 
 
+        Player player;
+        List<Attack> attackList;
+        switch (selection){
+            case 1:
+                player=new Player(CharacterType.WIZARD, weapon1, armor1, 0, inventory, skill1);
+                player.setTotalHealth(20);
+                player.setAttack(1);
+                player.setMagic(4);
+                player.setSpeed(1);
+                player.setDefense(2);
+                attackList = new ArrayList<>();
+                attackList.add(attack5);
+                attackList.add(attack6);
+                player.setAttacks(attackList);
+                player.setStatus(Status.NORMAL);
+                break;
+            case 2:
+                player=new Player(CharacterType.ARCHER, weapon1, armor1, 0, inventory, skill1);
+                player.setTotalHealth(20);
+                player.setAttack(2);
+                player.setMagic(2);
+                player.setSpeed(3);
+                player.setDefense(1);
+                attackList = new ArrayList<>();
+                attackList.add(attack3);
+                attackList.add(attack4);
+                player.setAttacks(attackList);
+                player.setStatus(Status.NORMAL);
+                break;
+            case 3:
+                player=new Player(CharacterType.WARRIOR, weapon1, armor1, 0, inventory, skill1);
+                player.setTotalHealth(30);
+                player.setAttack(2);
+                player.setMagic(1);
+                player.setSpeed(1);
+                player.setDefense(3);
+                attackList = new ArrayList<>();
+                attackList.add(attack1);
+                attackList.add(attack2);
+                player.setAttacks(attackList);
+                player.setStatus(Status.NORMAL);
+                break;
+            default:
+                player=new Player(CharacterType.REGULAR, weapon1, armor1, 0, inventory, skill1);
+                player.setTotalHealth(20);
+                player.setAttack(2);
+                player.setMagic(2);
+                player.setSpeed(2);
+                player.setDefense(2);
+                attackList = new ArrayList<>();
+                attackList.add(attack3);
+                attackList.add(attack4);
+                player.setAttacks(attackList);
+                player.setStatus(Status.NORMAL);
+        }
 
+        player.setName(name);
+
+        System.out.println(player);
+        return player;
+    }
 
 }
