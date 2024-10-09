@@ -91,12 +91,13 @@ public class Character {
         this.status = status;
     }
 
+    /**
+     * el nivel de un personaje es la suma de sus atributos: salud total, ataque, magia, velocidad y defensa
+     * @return
+     */
     public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
+        int sum = this.getTotalHealth()+this.getAttack()+this.getMagic()+this.getSpeed()+this.getDefense();
+        return sum;
     }
 
     @Override
