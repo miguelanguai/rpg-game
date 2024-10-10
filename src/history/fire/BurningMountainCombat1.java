@@ -1,7 +1,15 @@
 package history.fire;
 
-import history.MockPlayer;
+import battle.Battle;
+import character.CharacterType;
+import character.Player;
+import character.Enemy;
+import character.attributes.Attack;
+import object.ObjectAttribute;
+import object.ObjectEntity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,9 +18,9 @@ import java.util.Scanner;
  */
 public class BurningMountainCombat1 {
     private Scanner scanner;
-    private MockPlayer player;
+    private Player player;
 
-    public BurningMountainCombat1(Scanner scanner, MockPlayer player) {
+    public BurningMountainCombat1(Scanner scanner, Player player) {
         this.scanner = scanner;
         this.player = player;
     }
@@ -30,9 +38,30 @@ public class BurningMountainCombat1 {
 
     /**
      * Método que llama a la lógica de combate.
-     * Este método será completado con la lógica que está implementando tu compañero.
      */
     private void startCombat() {
-        System.out.println("El combate comienza...");
+
+       boolean isBoss = false;
+       ObjectEntity enemyObject = new ObjectEntity("Cristal de confusión", "Un pequeño cristal que emite un brillo tenue. Al activarse, genera ilusiones en el entorno, confundiendo a los jugadores y haciéndolos dudar de sus decisiones.", ObjectAttribute.STATUS);
+       int playerLevel = player.getLevel();
+       String enemyName = "Salamandra de fuego";
+
+       Enemy enemy = Enemy.generateEnemy(isBoss, enemyObject, playerLevel, enemyName);
+
+
+
+        System.out.println(player);
+        System.out.println(player.getTotalHealth());
+        Battle battle = new Battle(player, enemy, false);
+        battle.battle();
+
+
+        if (battle.isPlayerWon()) {
+            System.out.println("¡Has derrotado al enemigo y continúas tu camino!");
+
+        } else {
+            System.out.println("Has sido derrotado. Debes regresar y prepararte mejor.");
+
+        }
     }
 }

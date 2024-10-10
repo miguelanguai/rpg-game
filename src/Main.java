@@ -1,8 +1,11 @@
-import character.Player;
+
+import history.Game;
 
 public class Main {
     public static void main(String[] args) {
 
-        Player.main();
+        Game game = new Game();
+
+        game.start();
     }
 }

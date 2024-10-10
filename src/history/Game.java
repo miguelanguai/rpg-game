@@ -1,5 +1,6 @@
 package history;
 
+import character.Player;
 import history.introduction.Introduction;
 
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.Scanner;
  * con un anciano y toma decisiones que afectarán el desarrollo del juego.
  */
 public class Game {
-    private MockPlayer player;
+    private Player player;
     private Introduction introduction;
     private ElderConversation elderConversation;
     private Scanner scanner;
@@ -18,7 +19,7 @@ public class Game {
      * Inicializa el juego y crea instancias de Player, History.Introduction y History.ElderConversation.
      */
     public Game() {
-        player = new MockPlayer();
+        player = Player.generatePlayer();
         introduction = new Introduction();
         scanner = new Scanner(System.in);
         elderConversation = new ElderConversation(scanner, player);
@@ -32,8 +33,4 @@ public class Game {
         elderConversation.start();
     }
 
-    public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
-    }
 }
