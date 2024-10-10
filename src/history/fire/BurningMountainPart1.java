@@ -1,6 +1,6 @@
 package history.fire;
 
-import history.MockPlayer;
+import character.Player;
 
 import java.util.Scanner;
 
@@ -10,9 +10,9 @@ import java.util.Scanner;
  */
 public class BurningMountainPart1 {
     private Scanner scanner;
-    private MockPlayer player;
+    private Player player;
 
-    public BurningMountainPart1(Scanner scanner, MockPlayer player) {
+    public BurningMountainPart1(Scanner scanner, Player player) {
         this.scanner = scanner;
         this.player = player;
     }

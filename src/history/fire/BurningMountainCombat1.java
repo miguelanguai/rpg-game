@@ -1,8 +1,11 @@
 package history.fire;
 
-import history.MockPlayer;
-
 import java.util.Scanner;
+import object.ObjectEntity;
+import object.ObjectAttribute;
+import battle.Battle;
+import character.Enemy;
+import character.Player;
 
 /**
  * La clase MountainPathCombat maneja la narrativa y el combate para el Camino 1 en la Montaña Ardiente.
@@ -10,15 +13,15 @@ import java.util.Scanner;
  */
 public class BurningMountainCombat1 {
     private Scanner scanner;
-    private MockPlayer player;
+    private Player player;
 
-    public BurningMountainCombat1(Scanner scanner, MockPlayer player) {
+    public BurningMountainCombat1(Scanner scanner, Player player) {
         this.scanner = scanner;
-        this.player = player;
+        this.player=player;
     }
 
     /**
-     * Inicia la narrativa y llama al método de combate.
+     * Inicia la narrativa y ejecuta startCombat()
      */
     public void startPathAndCombat() {
         System.out.println("El enemigo emerge de entre las rocas ardientes, con su cuerpo envuelto en llamas.");
@@ -29,10 +32,23 @@ public class BurningMountainCombat1 {
     }
 
     /**
-     * Método que llama a la lógica de combate.
-     * Este método será completado con la lógica que está implementando tu compañero.
+     * llama a la logica de combate
      */
     private void startCombat() {
-        System.out.println("El combate comienza...");
+        boolean isBoss = false;
+        ObjectEntity enemyObject = new ObjectEntity("Cristal de confusión", "Un pequeño cristal que emite un brillo tenue. Al activarse, genera ilusiones en el entorno, confundiendo a los jugadores y haciéndolos dudar de sus decisiones.", ObjectAttribute.STATUS);
+        int playerLevel = player.getLevel();
+        String enemyName = "Salamandra de fuego";
+        Enemy enemy = Enemy.generateEnemy(isBoss, enemyObject, playerLevel, enemyName);
+
+        Battle battle = new Battle(player, enemy, false);
+        battle.battle();
+        // Aquí puedes continuar la historia dependiendo del resultado de la batalla
+        if (battle.isPlayerWon()) {
+            // Continuar la historia
+        } else {
+            // Lógica adicional para el caso de derrota
+        }
     }
 }
+
