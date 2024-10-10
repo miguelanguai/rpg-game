@@ -45,7 +45,7 @@ public class Battle {
     /**
      * ejecutar la batalla entre el jugador y el personaje enemigo
      */
-    public void battle(){
+    public boolean battle(){
         boolean playerWins;
         int playerStartingHealth = player.getLeftHealth();
 
@@ -92,6 +92,7 @@ public class Battle {
             getObject();
         }
         System.out.println("El combate ha terminado");
+        return playerWins;
     }
 
 
