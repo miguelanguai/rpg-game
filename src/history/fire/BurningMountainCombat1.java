@@ -1,6 +1,8 @@
 package history.fire;
 
 import java.util.Scanner;
+
+import history.GameOver;
 import object.ObjectEntity;
 import object.ObjectAttribute;
 import battle.Battle;
@@ -42,12 +44,15 @@ public class BurningMountainCombat1 {
         Enemy enemy = Enemy.generateEnemy(isBoss, enemyObject, playerLevel, enemyName);
 
         Battle battle = new Battle(player, enemy, false);
-        battle.battle();
+        boolean playerWon=battle.battle();
         // Aquí puedes continuar la historia dependiendo del resultado de la batalla
-        if (battle.isPlayerWon()) {
+        System.out.println("playerWon: "+playerWon);
+        if (playerWon) {
             // Continuar la historia
+            BurningMountainPart2.main(player);
         } else {
-            // Lógica adicional para el caso de derrota
+            GameOver gameOver = new GameOver();
+            gameOver.endGame(player.getName(), "Has muerto en combate");
         }
     }
 }
