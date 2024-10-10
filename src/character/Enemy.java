@@ -1,7 +1,7 @@
 package character;
 
-import character.attributes.Attack;
 
+import character.attributes.Attack;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -42,9 +42,9 @@ public class Enemy extends Character{
     public static Enemy generateEnemy(boolean isBoss, Object object, int playerLevel, String enemyName){
         Enemy enemy = new Enemy(object);
         enemy.setName(enemyName);
+
         Attack attack7 = new Attack("Arañazo", 1, 100, 5, CharacterType.REGULAR);
         Attack attack8 = new Attack("Placaje", 2, 100, 5, CharacterType.REGULAR);
-
         List<Attack> attackList = new ArrayList<>();
 
 
@@ -52,15 +52,21 @@ public class Enemy extends Character{
             playerLevel+= (int) (playerLevel*0.1);
             System.out.println(playerLevel);
             addAtributes(playerLevel, enemy);
+
             attackList.add(attack7);
             attackList.add(attack8);
+
         }else{
             playerLevel= (int) (playerLevel*0.8);
             System.out.println(playerLevel);
             addAtributes(playerLevel, enemy);
+
             attackList.add(attack7);
         }
         enemy.setAttacks(attackList);
+
+
+        }
 
         return enemy;
     }
