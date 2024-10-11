@@ -32,7 +32,7 @@ public class BurningMountainCombat1 {
     }
 
     /**
-     * llama a la logica de combate
+     * genera las estadísticas del combate
      */
     private void startCombat() {
         boolean isBoss = false;
@@ -41,7 +41,7 @@ public class BurningMountainCombat1 {
         String enemyName = "Salamandra de fuego";
         Enemy enemy = Enemy.generateEnemy(isBoss, enemyObject, playerLevel, enemyName);
 
-        Battle battle = new Battle(player, enemy, false);
+        Battle battle = new Battle(player, enemy);
         boolean playerWon=battle.battle();
         // Aquí puedes continuar la historia dependiendo del resultado de la batalla
         System.out.println("playerWon: "+playerWon);

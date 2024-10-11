@@ -26,7 +26,7 @@ public class BurningMountainPart2 {
         String enemyName = "Serpentucho infernal";
         Enemy enemy = Enemy.generateEnemy(true, enemyObject, playerLevel, enemyName);
 
-        Battle battle = new Battle(player, enemy, false);
+        Battle battle = new Battle(player, enemy);
 
         boolean playerWon =battle.battle();
         if(playerWon){
