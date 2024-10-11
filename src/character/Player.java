@@ -1,12 +1,10 @@
 package character;
 
-import battle.Battle;
 import character.attributes.Attack;
 import character.attributes.Skill;
 import character.weapon.Armor;
 import character.weapon.Weapon;
 import object.ObjectEntity;
-import object.ObjectAttribute;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,88 +86,6 @@ public class Player extends Character {
                 ", inventory=" + inventory +
                 ", skill=" + skill +
                 '}';
-    }
-
-    public static void main(){
-
-        //Weapons
-        Weapon weapon1 = new Weapon("Espada", "Una espada sencilla, bien equilibrada, perfecta para el combate cuerpo a cuerpo");
-        Weapon weapon2 = new Weapon("Hacha", "Hacha de doble filo que duplica la cantidad de víctimas en combate cuerpo a cuerpo");
-        Weapon weapon3 = new Weapon("Arco Básico", "Un arco sencillo, hecho para ataques a distancia con precisión");
-        Weapon weapon4 = new Weapon("Arco Incandescente", "Arco que tira flechas de lava, con las que quemar al enemigo");
-        Weapon weapon5 = new Weapon("Bastón de Roble", "Un bastón básico utilizado para canalizar magia elemental");
-        Weapon weapon6 = new Weapon("Libro del Fénix", "Libro con encantamientos poderosos");
-
-        //Armors
-        Armor armor1 = new Armor("Armadura de placas", "Armadura que ofrece resistencia a ataques físicos");
-        Armor armor2 = new Armor("Cota de malla", "Armadura metálica que permite movilidad y precisión");
-        Armor armor3 = new Armor("Túnica", "Prenda hecha por elfos ligera pero muy resistente");
-
-        //Objects
-        ObjectEntity object1 = new ObjectEntity("Poción", "Restaura toda la salud del personaje", ObjectAttribute.LEFTHEALTH);
-        ObjectEntity object3 = new ObjectEntity("Brebaje", "Aumenta el ataque del personaje 1PT", ObjectAttribute.ATTACK);
-        ObjectEntity object4 = new ObjectEntity("Manzana encantada", "Aumenta la defensa del personaje 1PT", ObjectAttribute.DEFENSE);
-
-
-        List<ObjectEntity> inventory = new ArrayList<>();
-        inventory.add(object1);
-        inventory.add(object3);
-        inventory.add(object1);
-
-        //Hability
-        Skill skill1 = new Skill("Normal", "Habilidad que no hace nada mas");
-
-        //Attack
-        Attack attack1 = new Attack("Toque afilado", 1, 100, 5, CharacterType.WARRIOR);
-        Attack attack2 = new Attack("Mandoble violento", 2, 100, 5, CharacterType.WARRIOR);
-        Attack attack3 = new Attack("Flecha afilada", 1, 100, 5, CharacterType.ARCHER);
-        Attack attack4 = new Attack("Flechazo eficaz", 2, 100, 5, CharacterType.ARCHER);
-        Attack attack5 = new Attack("Lanzapiedras", 1, 100, 5, CharacterType.WIZARD);
-        Attack attack6 = new Attack("Confundus", 2, 100, 5, CharacterType.WIZARD);
-        Attack attack7 = new Attack("Arañazo", 1, 100, 5, CharacterType.REGULAR);
-        Attack attack8 = new Attack("Placaje", 2, 100, 5, CharacterType.REGULAR);
-
-        List<Attack> attackList = new ArrayList<>();
-        attackList.add(attack1);
-        attackList.add(attack2);
-
-
-        //Initialize my player
-        Player me = new Player(CharacterType.WARRIOR,weapon1, armor1, 0, inventory, skill1  );
-        me.setName("Migue");
-        me.setTotalHealth(20);
-        me.setLeftHealth(20);
-        me.setAttack(10);
-        me.setMagic(10);
-        me.setSpeed(10);
-        me.setDefense(10);
-        me.setAttacks(attackList);
-        me.setStatus(Status.NORMAL);
-
-        System.out.println(me.getName()+ " "+ me.toString());
-
-        List<Attack> enemyAttackList = new ArrayList<>();
-        enemyAttackList.add(attack1);
-
-
-        //Initialize the enemy
-        Enemy enemy = new Enemy(object1);
-        enemy.setName("Bowser");
-        enemy.setTotalHealth(15);
-        enemy.setLeftHealth(15);
-        enemy.setAttack(10);
-        enemy.setMagic(10);
-        enemy.setSpeed(10);
-        enemy.setDefense(10);
-        enemy.setAttacks(enemyAttackList);
-        enemy.setStatus(Status.NORMAL);
-        enemy.setObject(object4);
-
-        System.out.println(enemy.toString());
-
-        Battle battle = new Battle(me, enemy, false);
-        battle.battle();
-
     }
 
     /**
