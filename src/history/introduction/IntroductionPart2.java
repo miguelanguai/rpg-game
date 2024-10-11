@@ -29,7 +29,6 @@ public class IntroductionPart2 {
         System.out.println("Anciano: Debes ser rápido, valiente, y sobre todo, estar preparado para lo que está por venir. Tu viaje no será fácil, pero en tus manos está el destino de Java.");
         System.out.println("Anciano: Ahora, la decisión es tuya, joven " + player.getName());
         System.out.println("Anciano: Puedes elegir seguir adelante y enfrentar el destino que te espera, o puedes volver por donde viniste, dejando que las sombras consuman este mundo.");
-        System.out.println("Anciano: Sea cual sea tu elección, debes tomarla ahora.");
         if (finalDecision()){
             this.acceptMission();
         }else{
@@ -41,8 +40,6 @@ public class IntroductionPart2 {
      * Permite al jugador tomar una decisión final sobre aceptar o rechazar la misión del anciano.
      */
     private boolean finalDecision() {
-        System.out.println("Anciano: Ahora, la decisión es tuya, " + player.getName());
-        System.out.println("Anciano: Puedes elegir seguir adelante y enfrentar el destino que te espera, o puedes volver por donde viniste, dejando que las sombras consuman este mundo");
         System.out.println("Anciano: Sea cual sea tu elección, debes tomarla ahora.");
         System.out.println("1. Acepto la misión. Ayudaré a restaurar el equilibrio.");
         System.out.println("2. No. Esta no es mi lucha.");
@@ -67,9 +64,7 @@ public class IntroductionPart2 {
     private void acceptMission() {
         System.out.println("Anciano: '¡Excelente! Juntos restauraremos el equilibrio de la isla.'");
 
-        // Iniciar la continuación de la historia en IntroductionPart3
-        IntroductionPart3 introductionPart3 = new IntroductionPart3(player);
-        introductionPart3.introductionPart3();
+
     }
 
     /**
