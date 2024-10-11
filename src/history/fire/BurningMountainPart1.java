@@ -40,7 +40,7 @@ public class BurningMountainPart1 {
         switch (choice) {
             case 1:
                 System.out.println("Avanzas con decisión hacia la cima. El calor se intensifica, y tus pasos se vuelven más pesados.");
-                BurningMountainCombat1 burningMountainCombat1 = new BurningMountainCombat1(scanner, player);
+                BurningMountainCombat1 burningMountainCombat1 = new BurningMountainCombat1(player);
                 burningMountainCombat1.startPathAndCombat();
                 break;
             case 2:
