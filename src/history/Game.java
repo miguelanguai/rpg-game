@@ -1,7 +1,10 @@
 package history;
 
 import character.Player;
+import history.fire.BurningMountainPart1;
 import history.introduction.Introduction;
+import history.introduction.IntroductionPart2;
+import history.introduction.IntroductionPart3;
 
 import java.util.Scanner;
 
@@ -30,6 +33,10 @@ public class Game {
         introduction.display();
         elderConversation.start();
         elderConversation.displayOptions();
+        IntroductionPart2 i2 = new IntroductionPart2(player);
+        i2.introductionPart2();
+        IntroductionPart3 introductionPart3 = new IntroductionPart3(player);
+        introductionPart3.introductionPart3();
     }
 
 }
