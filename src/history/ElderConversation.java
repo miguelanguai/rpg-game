@@ -10,11 +10,9 @@ import java.util.Scanner;
  */
 public class ElderConversation {
     private Player player;
-    private IntroductionPart2 introductionPart2;
 
     public ElderConversation(Player player) {
         this.player = player;
-        this.introductionPart2 = new IntroductionPart2(player);
     }
 
     /**
@@ -26,7 +24,6 @@ public class ElderConversation {
         System.out.println("Anciano: La Isla de Java ha sido el corazón de los elementos durante siglos.");
         System.out.println("Anciano: Aquí, tierra, fuego, agua y aire se entrelazan, mantenidos en equilibrio por los antiguos guardianes.");
         System.out.println("Anciano: Pero algo ha cambiado... algo terrible ha sucedido.");
-        displayOptions();
     }
 
     /**
@@ -55,8 +52,6 @@ public class ElderConversation {
                 System.out.println("Opción no válida.");
                 displayOptions();
         }
-
-        introductionPart2.introductionPart2();
     }
 
     /**
