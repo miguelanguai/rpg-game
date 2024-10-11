@@ -10,12 +10,10 @@ import java.util.*;
 public class Battle {
     private Player player;
     private Enemy enemy;
-    private boolean playerWon;
 
-    public Battle(Player player, Enemy enemy, boolean playerWon) {
+    public Battle(Player player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
-        this.playerWon = playerWon;
     }
 
     public Player getPlayer() {
@@ -32,14 +30,6 @@ public class Battle {
 
     public void setEnemy(Enemy enemy) {
         this.enemy = enemy;
-    }
-
-    public boolean isPlayerWon() {
-        return playerWon;
-    }
-
-    public void setPlayerWon(boolean playerWon) {
-        this.playerWon = playerWon;
     }
 
     /**
