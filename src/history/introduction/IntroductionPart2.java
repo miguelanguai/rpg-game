@@ -30,13 +30,17 @@ public class IntroductionPart2 {
         System.out.println("Anciano: Ahora, la decisión es tuya, joven " + player.getName());
         System.out.println("Anciano: Puedes elegir seguir adelante y enfrentar el destino que te espera, o puedes volver por donde viniste, dejando que las sombras consuman este mundo.");
         System.out.println("Anciano: Sea cual sea tu elección, debes tomarla ahora.");
-        finalDecision();
+        if (finalDecision()){
+            this.acceptMission();
+        }else{
+            this.rejectMission();
+        }
     }
 
     /**
      * Permite al jugador tomar una decisión final sobre aceptar o rechazar la misión del anciano.
      */
-    private void finalDecision() {
+    private boolean finalDecision() {
         System.out.println("Anciano: Ahora, la decisión es tuya, " + player.getName());
         System.out.println("Anciano: Puedes elegir seguir adelante y enfrentar el destino que te espera, o puedes volver por donde viniste, dejando que las sombras consuman este mundo");
         System.out.println("Anciano: Sea cual sea tu elección, debes tomarla ahora.");
@@ -44,19 +48,17 @@ public class IntroductionPart2 {
         System.out.println("2. No. Esta no es mi lucha.");
 
         Scanner scanner = new Scanner(System.in);
+        boolean decission=true;
         int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                acceptMission();
-                break;
-            case 2:
-                System.out.println("Anciano: Lo entiendo... no todos están destinados a la grandeza. Sin embargo, recuerda mis palabras: sin tu ayuda, la isla caerá en la oscuridad eterna.");
-                rejectMission();
-                break;
-            default:
-                System.out.println("Opción no válida.");
-                finalDecision(); // Vuelve a llamar a la decisión final si la opción es inválida
+        scanner.nextLine();
+        if(choice==1){
+            decission=true;
+        }else if(choice==2){
+            decission=false;
+        }else{
+            finalDecision();
         }
+        return decission;
     }
 
     /**
