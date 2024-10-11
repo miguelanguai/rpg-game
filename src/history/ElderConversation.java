@@ -9,14 +9,12 @@ import java.util.Scanner;
  * La clase History.ElderConversation maneja el diálogo entre el jugador y el anciano.
  */
 public class ElderConversation {
-    private Scanner scanner;
     private Player player;
     private IntroductionPart2 introductionPart2;
 
-    public ElderConversation(Scanner scanner, Player player) {
-        this.scanner = scanner; // Reutiliza el Scanner existente
+    public ElderConversation(Player player) {
         this.player = player;
-        this.introductionPart2 = new IntroductionPart2(scanner, player);
+        this.introductionPart2 = new IntroductionPart2(player);
     }
 
     /**
@@ -34,7 +32,7 @@ public class ElderConversation {
     /**
      * Muestra las opciones de diálogo disponibles para el jugador.
      */
-    private void displayOptions() {
+    public void displayOptions() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Opciones:");
         System.out.println("1. ¿Quién eres tú?");

@@ -10,11 +10,9 @@ import java.util.Scanner;
  * después de que el jugador acepta la misión del anciano.
  */
 public class IntroductionPart3 {
-    private Scanner scanner;
     private Player player;
 
-    public IntroductionPart3(Scanner scanner, Player player) {
-        this.scanner = scanner;
+    public IntroductionPart3(Player player) {
         this.player = player;
     }
 
@@ -47,7 +45,7 @@ public class IntroductionPart3 {
                 System.out.println("Anciano: La Montaña Ardiente no es lugar para los débiles.");
                 System.out.println("Anciano: Antaño un hogar de poderosos espíritus del fuego, ahora está corrompida por fuerzas oscuras.");
                 System.out.println("Anciano: Prepárate para enfrentar enemigos que controlan el fuego, y tal vez algo peor.");
-                BurningMountainPart1 burningMountainPart1 = new BurningMountainPart1(scanner, player);
+                BurningMountainPart1 burningMountainPart1 = new BurningMountainPart1(player);
                 burningMountainPart1.startBurningMountain();
                 break;
             case 2:

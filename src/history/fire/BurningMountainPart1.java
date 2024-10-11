@@ -9,11 +9,9 @@ import java.util.Scanner;
  * Aquí el jugador comienza su travesía a través del fuego y lava.
  */
 public class BurningMountainPart1 {
-    private Scanner scanner;
     private Player player;
 
-    public BurningMountainPart1(Scanner scanner, Player player) {
-        this.scanner = scanner;
+    public BurningMountainPart1(Player player) {
         this.player = player;
     }
 
@@ -37,6 +35,7 @@ public class BurningMountainPart1 {
      * Permite al jugador tomar una decisión sobre cómo proceder en la Montaña Ardiente.
      */
     private void makeChoice() {
+        Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:

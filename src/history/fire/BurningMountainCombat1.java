@@ -14,11 +14,9 @@ import character.Player;
  * El jugador enfrenta un combate al avanzar hacia la cima.
  */
 public class BurningMountainCombat1 {
-    private Scanner scanner;
     private Player player;
 
-    public BurningMountainCombat1(Scanner scanner, Player player) {
-        this.scanner = scanner;
+    public BurningMountainCombat1(Player player) {
         this.player=player;
     }
 

@@ -13,7 +13,6 @@ public class Game {
     private Player player;
     private Introduction introduction;
     private ElderConversation elderConversation;
-    private Scanner scanner;
 
     /**
      * Inicializa el juego y crea instancias de Player, History.Introduction y History.ElderConversation.
@@ -21,8 +20,7 @@ public class Game {
     public Game() {
         player = Player.generatePlayer();
         introduction = new Introduction();
-        scanner = new Scanner(System.in);
-        elderConversation = new ElderConversation(scanner, player);
+        elderConversation = new ElderConversation(player);
     }
 
     /**
@@ -31,6 +29,7 @@ public class Game {
     public void start() {
         introduction.display();
         elderConversation.start();
+        elderConversation.displayOptions();
     }
 
 }

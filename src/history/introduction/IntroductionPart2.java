@@ -10,12 +10,10 @@ import java.util.Scanner;
  * tras la conversación inicial con el anciano.
  */
 public class IntroductionPart2 {
-    private Scanner scanner;
     private Player player;
     private GameOver gameOver;
 
-    public IntroductionPart2(Scanner scanner, Player player) {
-        this.scanner = scanner;
+    public IntroductionPart2(Player player) {
         this.player = player;
         this.gameOver = new GameOver();
     }
@@ -68,7 +66,7 @@ public class IntroductionPart2 {
         System.out.println("Anciano: '¡Excelente! Juntos restauraremos el equilibrio de la isla.'");
 
         // Iniciar la continuación de la historia en IntroductionPart3
-        IntroductionPart3 introductionPart3 = new IntroductionPart3(scanner, player);
+        IntroductionPart3 introductionPart3 = new IntroductionPart3(player);
         introductionPart3.introductionPart3();
     }
 
